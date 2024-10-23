@@ -1,3 +1,4 @@
+import os
 import argparse
 import codecs
 import re
@@ -17,6 +18,8 @@ from model.utils_infer import (
     remove_silence_for_generated_wav,
 )
 
+script_dir = os.path.dirname(os.path.realpath(__file__))
+toml_path = os.path.join(script_dir, "inference_cli.toml")
 
 parser = argparse.ArgumentParser(
     prog="python3 inference-cli.py",
@@ -26,8 +29,8 @@ parser = argparse.ArgumentParser(
 parser.add_argument(
     "-c",
     "--config",
-    help="Configuration file. Default=inference_config.toml",
-    default="inference_cli.toml",
+    help="Configuration file. Default=inference_cli.toml",
+    default=toml_path,
 )
 parser.add_argument(
     "-m",
