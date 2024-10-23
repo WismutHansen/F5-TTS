@@ -26,8 +26,8 @@ parser = argparse.ArgumentParser(
 parser.add_argument(
     "-c",
     "--config",
-    help="Configuration file. Default=cli-config.toml",
-    default="inference-cli.toml",
+    help="Configuration file. Default=inference_config.toml",
+    default="inference_cli.toml",
 )
 parser.add_argument(
     "-m",
